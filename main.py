@@ -4,6 +4,9 @@ import pygame
 screen = pygame.display.set_mode((width, height))
 pygame.display.flip()
 
+background_colour = (255, 255, 255)
+screen.fill(background_colour)
+
 running = True
 while running:
   for event in pygame.event.get():
