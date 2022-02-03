@@ -1,1 +1,3 @@
 subreddit scraper with GUI
+- finds important info in subreddit
+- graphs info if wanted?
