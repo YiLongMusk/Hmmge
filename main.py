@@ -21,14 +21,18 @@ rect_passive = pygame.Color('chartreuse4')
 
 colour_active = False
 
-while True:
-  for event in pygame.event.get():
-    
-    if event.type == pygame.QUIT:
-      pygame.quit()
-      sys.exit()
-    
-    if event.type == pygame.MOUSEBUTTONDOWN:
+def PrintText():
+    display_surface = pygame.display.set_mode((width, height))
+
+    font = pygame.font.Font('freesansbold.ttf', 32)
+    text = font.render('Hello')
+ 
+    textRect = text.get_rect()
+ 
+    textRect.center = (width // 2, height // 2)
+
+def InputText():
+        if event.type == pygame.MOUSEBUTTONDOWN:
             if input_rect.collidepoint(event.pos):
                 colour_active = True
             else:
@@ -58,5 +62,13 @@ while True:
     
     screen.blit(text_surface, (input_rect.x+5, input_rect.y+5))
     input_rect.w = max(100, text_surface.get_width()+10)
+
+while True:
+  for event in pygame.event.get():
+    
+    if event.type == pygame.QUIT:
+      pygame.quit()
+      sys.exit()
+    
     
     pygame.display.flip()
